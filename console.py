@@ -20,3 +20,11 @@ member4=Member('Ronnie Coleman','male')
 member_repo.save(member4)
 member5=Member('Condoleeza Rice','female')
 member_repo.save(member5)
+
+gymclass1=GymClass('Olympic baby lifting',4)
+gymclass_repo.save(gymclass1)
+
+gymclass2=GymClass('Extreme Pilates',3)
+gymclass_repo.save(gymclass2)
+gymclass3=GymClass('Kangaroo sparring',6)
+gymclass_repo.save(gymclass3)

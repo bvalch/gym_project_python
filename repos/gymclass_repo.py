@@ -6,8 +6,8 @@ def delete_all():
 
 
 def save(gymclass):
-    sql="INSERT INTO gymclasses(name,price,capacity,runtime) VALUES ( %s,%s,%s,%s) RETURNING id"
-    values=[gymclass.name,gymclass.price,gymclass.capacity,gymclass.runtime]
+    sql="INSERT INTO gymclasses(name,capacity) VALUES ( %s,%s) RETURNING id"
+    values=[gymclass.name,gymclass.capacity]
     result=run_sql(sql,values)
     gymclass.id=result[0]['id']
     
