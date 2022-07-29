@@ -28,3 +28,7 @@ gymclass2=GymClass('Extreme Pilates',3)
 gymclass_repo.save(gymclass2)
 gymclass3=GymClass('Kangaroo sparring',6)
 gymclass_repo.save(gymclass3)
+
+
+dagym1=DaGym(member1,gymclass1)
+dagym_repo.save(dagym1)

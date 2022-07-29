@@ -7,7 +7,8 @@ def delete_all():
 
 
 def save(member):
-    sql="INSERT INTO members ( first_name,last_name) VALUES (%s,%s) RETURNING id"
+    sql="INSERT INTO members ( name,sex) VALUES (%s,%s) RETURNING id"
     values=[member.name,member.sex]
     results=run_sql(sql,values)
     member.id=results[0]['id']
+    return member

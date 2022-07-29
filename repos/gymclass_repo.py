@@ -10,4 +10,4 @@ def save(gymclass):
     values=[gymclass.name,gymclass.capacity]
     result=run_sql(sql,values)
     gymclass.id=result[0]['id']
-    
+    return gymclass

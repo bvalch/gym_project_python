@@ -23,9 +23,7 @@ CREATE TABLE gymclasses(
 
 CREATE TABLE dagym(
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    till INT,
     member_id INT REFERENCES members(id), 
-    gym_class_id INT REFERENCES gymclasses(id)
+    gymclass_id INT REFERENCES gymclasses(id)
 );
 
