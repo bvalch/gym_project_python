@@ -7,7 +7,7 @@ CREATE TABLE members(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     sex VARCHAR(255),
-    wallet INT,
+    
     membership_type BOOLEAN
 );
 
