@@ -5,8 +5,7 @@ DROP TABLE gymclasses;
 
 CREATE TABLE members(
     id SERIAL PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
+    name VARCHAR(255),
     sex VARCHAR(255),
     wallet INT,
     membership_type BOOLEAN
