@@ -3,3 +3,7 @@ from flask import Blueprint
 from models.gymclass import GymClass
 import repos.gymclass_repo as gymclass_repo
 gymclasses_blueprint = Blueprint("gymclasses", __name__)
+
+@gymclasses_blueprint.route("/classes")
+def gymclasses():
+    return "gymclasses route"
