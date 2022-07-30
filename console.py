@@ -1,14 +1,14 @@
 from models.member import Member
 from models.gymclass import GymClass
-from models.dagym import DaGym
+from models.gymsession import Gymsession
 
 import repos.member_repo as  member_repo
 import repos.gymclass_repo as gymclass_repo
-import repos.dagym_repo as dagym_repo
+import repos.gymsession_repo as gymsession_repo
 
 member_repo.delete_all()
 gymclass_repo.delete_all()
-dagym_repo.delete_all()
+gymsession_repo.delete_all()
 
 member1=Member('Arnold Swarzenegger','male')
 member_repo.save(member1)
@@ -30,5 +30,5 @@ gymclass3=GymClass('Kangaroo sparring',6)
 gymclass_repo.save(gymclass3)
 
 
-dagym1=DaGym(member1,gymclass1)
-dagym_repo.save(dagym1)
+dagym1=Gymsession(member1,gymclass1)
+gymsession_repo.save(dagym1)

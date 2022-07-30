@@ -1,4 +1,4 @@
-DROP TABLE dagym;
+DROP TABLE gymsession;
 DROP TABLE members;
 DROP TABLE gymclasses;
 
@@ -21,7 +21,7 @@ CREATE TABLE gymclasses(
 
 
 
-CREATE TABLE dagym(
+CREATE TABLE gymsessions(
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id), 
     gymclass_id INT REFERENCES gymclasses(id)
