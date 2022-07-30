@@ -6,9 +6,8 @@ def delete_all():
     run_sql(sql)
 
 
-
 def save(member):
-    sql="INSERT INTO members ( name,sex) VALUES (%s,%s) RETURNING id"
+    sql="INSERT INTO members (name, sex) VALUES (%s, %s) RETURNING id"
     values=[member.name,member.sex]
     results=run_sql(sql,values)
     member.id=results[0]['id']
@@ -18,7 +17,7 @@ def select_all():
     sql ="SELECT * FROM members"
     results=run_sql(sql)
     members=[]
-    for item in results:
-        member=Member(item['name'],item['sex'])
+    for member in results:
+        member=Member(member['name'],member['sex'],member['id'])
         members.append(member)
     return members

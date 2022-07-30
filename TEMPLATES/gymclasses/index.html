@@ -1,4 +1,17 @@
 {%extends 'base.html'%}
 {%block content%}
-GYMCLASSES LIST INDEX PAGE
+
+<h1>GYMCLASSES LIST INDEX PAGE</h1>
+<table>
+<th>GYMCLASS NAME</th>
+<th>CAPACITY</th>
+</table>
+{%for class in gymclasses%}
+<table>
+
+    <td><a href="{{class.id}}">{{class.name}}</a> {{class.capacity}}</td>
+    
+   
+</table>
+{%endfor%}
 {%endblock%}

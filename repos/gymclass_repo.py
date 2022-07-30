@@ -1,4 +1,5 @@
 from database.run_sql import run_sql
+from models.gymclass import GymClass
 
 def delete_all():
     sql="DELETE FROM gymclasses"
@@ -15,4 +16,8 @@ def save(gymclass):
 def select_all():
     sql="SELECT * FROM gymclasses"
     result=run_sql(sql)
-    return result
+    gymclasses=[]
+    for item in result:
+        gymclass=GymClass(item['name'],item['capacity'],item['id'])
+        gymclasses.append(gymclass)
+    return gymclasses

@@ -6,11 +6,12 @@ import repos.member_repo as  member_repo
 import repos.gymclass_repo as gymclass_repo
 import repos.gymsession_repo as gymsession_repo
 
+gymsession_repo.delete_all()
 member_repo.delete_all()
 gymclass_repo.delete_all()
-gymsession_repo.delete_all()
 
-member1=Member('Arnold Swarzenegger','male')
+
+member1=Member('Arnold','male')
 member_repo.save(member1)
 member2=Member('Rambo of Moria','male')
 member_repo.save(member2)
