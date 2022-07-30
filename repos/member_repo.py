@@ -1,4 +1,5 @@
 from database.run_sql import run_sql
+from models.member import Member
 
 def delete_all():
     sql="DELETE FROM members"
@@ -12,3 +13,12 @@ def save(member):
     results=run_sql(sql,values)
     member.id=results[0]['id']
     return member
+
+def select_all():
+    sql ="SELECT * FROM members"
+    results=run_sql(sql)
+    members=[]
+    for item in results:
+        member=Member(item['name'],item['sex'])
+        members.append(member)
+    return members

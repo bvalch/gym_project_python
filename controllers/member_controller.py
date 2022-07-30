@@ -6,4 +6,5 @@ members_blueprint = Blueprint("members", __name__)
 
 @members_blueprint.route("/members")
 def members():
-    return  'route test'
+    members=member_repo.select_all()
+    return  render_template("/members/index.html", members=members)

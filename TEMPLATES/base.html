@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/section.css') }}">
     <title>GYMNAME</title>
 </head>
+
 <body>
     <main>
         <nav>
             <ul>
-                <a href="/"><li>Home</li></a>
-                <a href="/members"><li>Members</li></a>
-                <a href="/classes"><li>Classes</li></a>
+                <a href="/">
+                    <li>Home</li>
+                </a>
+                <a href="/members">
+                    <li>Members</li>
+                </a>
+                <a href="/classes">
+                    <li>Classes</li>
+                </a>
 
             </ul>
         </nav>
@@ -21,6 +31,7 @@
             {% endblock %}
         </section>
     </main>
-    
+
 </body>
+
 </html>

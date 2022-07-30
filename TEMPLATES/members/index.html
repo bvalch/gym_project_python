@@ -1,4 +1,17 @@
 {%extends 'base.html'%}
 {%block content%}
-MEMBERS LIST INDEX PAGE
+<h1>MEMBERS LIST INDEX PAGE</h1>
+<table>
+<th>FULL NAME</th>
+<th>SEX</th>
+</table>
+{%for member in members%}
+<table>
+
+    <td>{{member.name}} {{member.sex}}</td>
+    
+   
+</table>
+
+{%endfor%}
 {%endblock%}

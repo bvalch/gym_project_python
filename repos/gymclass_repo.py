@@ -11,3 +11,8 @@ def save(gymclass):
     result=run_sql(sql,values)
     gymclass.id=result[0]['id']
     return gymclass
+
+def select_all():
+    sql="SELECT * FROM gymclasses"
+    result=run_sql(sql)
+    return result
