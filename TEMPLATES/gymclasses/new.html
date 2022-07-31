@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block content%}
+<form action="/new/create" method="POST">
+    <div>
+    <label for="name">Name of Class</label>
+    <input type="text" id="name" name="name">
+</div>
+    <div>
+    <label for="capacity">Capacity of Class</label>
+    <input type="number" id="capacity" name="capacity">
+</div>
+
+<button type="submit">Create new Class</button>
+
+</form>
+
+
+{%endblock%}

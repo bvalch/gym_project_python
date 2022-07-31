@@ -35,7 +35,6 @@ def edit(id):
 def edit_form(id):
     name=request.form["name"]
     sex=request.form["gender"]
-    
     member=Member(name,sex,id)
     member_repo.update(member)
     return redirect("/members")

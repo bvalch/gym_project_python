@@ -2,6 +2,7 @@
 {%block content%}
 
 <h1>GYMCLASSES LIST INDEX PAGE</h1>
+<a href="/classes/new"><button>Create new Class</button></a>
 <table>
 <th>GYMCLASS NAME</th>
 <th>CAPACITY</th>
@@ -9,9 +10,10 @@
 {%for class in gymclasses%}
 <table>
 
-    <td><a href="classes/{{class.id}}">{{class.name}}</a> {{class.capacity}}</td>
+    <td>{{class.name}} {{class.capacity}}</td>
     
    
 </table>
+<a href="classes/{{class.id}}"><button>Manage</button></a>
 {%endfor%}
 {%endblock%}

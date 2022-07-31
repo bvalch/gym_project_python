@@ -26,5 +26,10 @@ def select(id):
     sql="SELECT * FROM gymclasses WHERE id=%s"
     values=[id]
     results=run_sql(sql,values)[0]
-    gymclass=GymClass(results['name'],results['capacity'])
+    gymclass=GymClass(results['name'],results['capacity'],results['id'])
     return gymclass
+
+def update(gymclass):
+    sql="UPDATE gymclasses SET(name,capacity)=(%s,%s) WHERE id= %s"
+    values=[gymclass.name,gymclass.capacity,gymclass.id]
+    run_sql(sql,values)

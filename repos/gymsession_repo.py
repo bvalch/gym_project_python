@@ -13,3 +13,6 @@ def save(gymsession):
     values=[gymsession.member.id, gymsession.gymclass.id]
     result=run_sql(sql,values)
     gymsession.id=result[0]['id']
+
+
+
