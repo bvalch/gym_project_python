@@ -21,3 +21,15 @@ def select_all():
         member=Member(member['name'],member['sex'],member['id'])
         members.append(member)
     return members
+
+def select(id):
+    sql="SELECT * FROM members where ID = %s"
+    values=[id]
+    result=run_sql(sql,values)[0]
+    member=Member(result['name'],result['sex'],result['id'])
+    return member
+
+def update(member):
+    sql="UPDATE members SET (name,sex) = (%s,%s) WHERE id = %s"
+    values=[member.name,member.sex,member.id]
+    run_sql(sql,values)

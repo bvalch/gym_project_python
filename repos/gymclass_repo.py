@@ -21,3 +21,10 @@ def select_all():
         gymclass=GymClass(item['name'],item['capacity'],item['id'])
         gymclasses.append(gymclass)
     return gymclasses
+    
+def select(id):
+    sql="SELECT * FROM gymclasses WHERE id=%s"
+    values=[id]
+    results=run_sql(sql,values)[0]
+    gymclass=GymClass(results['name'],results['capacity'])
+    return gymclass

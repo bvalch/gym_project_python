@@ -8,3 +8,8 @@ gymclasses_blueprint = Blueprint("gymclasses", __name__)
 def gymclasses():
     gymclasses=gymclass_repo.select_all()
     return render_template("/gymclasses/index.html", gymclasses=gymclasses)
+
+@gymclasses_blueprint.route("/classes/<id>")
+def show(id):
+    gymclass=gymclass_repo.select(id)
+    return render_template("gymclasses/show.html",gymclass=gymclass)

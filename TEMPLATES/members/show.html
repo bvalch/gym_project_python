@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>show.html</h1>
+{{member.name}} {{member.sex}} {{member.id}}
+
+<a href="/edit/{{member.id}}"><button>Edit</button></a>
+
+<a href="members/edit"><button>Deactivate</button></a>
+{%endblock%}
