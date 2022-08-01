@@ -17,7 +17,8 @@ CREATE TABLE gymclasses(
     name VARCHAR(255),
     price INT,
     capacity INT,
-    runtime INT
+    runtime INT,
+    gym_active BOOLEAN
 );
 
 

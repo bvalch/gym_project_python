@@ -8,7 +8,7 @@ import repos.gymsession_repo as gymsession_repo
 gymclasses_blueprint = Blueprint("gymclasses", __name__)
 
 @gymclasses_blueprint.route("/classes")
-def gymclasses():
+def gymclasses_show():
     gymclasses=gymclass_repo.select_all()
     return render_template("/gymclasses/index.html", gymclasses=gymclasses)
 
@@ -23,10 +23,14 @@ def edit(id):
     return render_template("/gymclasses/edit.html", gymclass=gymclass)
 
 @gymclasses_blueprint.route("/classes/<id>/edit", methods=["POST"])
-def edit_for(id):
+def edit_form(id):
     name=request.form["name"]
     capacity=request.form["capacity"]
-    gymclass=GymClass(name,capacity,id)
+    gym_active=request.form["gym_active"]
+    gymclass=GymClass(name,capacity,gym_active,id)
+    if gym_active==False:
+        gymclass_repo.deactivate_members(id)
+    
     gymclass_repo.update(gymclass)
     return redirect("/classes")
 
