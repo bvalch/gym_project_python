@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{%block content%}
+
+<form action="/classes/{{gymclass.id}}/add" method="POST">
+<fieldset><legend>><label for="select_member">Select Member</label></legend>
+<div>Chose members to add</div>
+
+{%for member in members%}
+<div>
+<label for="select_member">{{member.name}}</label>
+<input type="checkbox" id="select_member" name="member_id" value="{{member.id}}">{{member.name}}<br>
+
+
+</div>
+{%endfor%}
+</select>
+<button type="submit">Add members to class</button>
+</fieldset>
+</form>
+{%endblock%}

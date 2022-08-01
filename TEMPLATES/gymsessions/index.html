@@ -1,4 +1,9 @@
 {%extends 'base.html'%}
 {%block content%}
-GYMSESSIONS LIST INDEX PAGE
+<h1>TEST</h1>
+{% for gymsession in gymsessions %}
+<div>{{gymsession.member.name}}</div>
+<div>{{gymsession.gymclass.name}}</div>
+ 
+{%endfor%}
 {%endblock%}

@@ -5,7 +5,6 @@ def delete_all():
     sql="DELETE FROM gymclasses"
     run_sql(sql)
 
-
 def save(gymclass):
     sql="INSERT INTO gymclasses(name,capacity) VALUES ( %s,%s) RETURNING id"
     values=[gymclass.name,gymclass.capacity]
