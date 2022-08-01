@@ -2,6 +2,7 @@ from flask import Flask,render_template,redirect,request
 from flask import Blueprint
 from models.member import Member
 import repos.member_repo as member_repo
+import repos.gymsession_repo as gymsession_repo
 members_blueprint = Blueprint("members", __name__)
 
 @members_blueprint.route("/members")
@@ -38,3 +39,19 @@ def edit_form(id):
     member=Member(name,sex,id)
     member_repo.update(member)
     return redirect("/members")
+
+@members_blueprint.route("/edit/<id>/Deactivate")
+def show_member_to_deactivate(id):
+    member=member_repo.select(id)
+    gymclasses=gymsession_repo.select(id)
+    return render_template("/members/deactivate.html", member=member, gymclasses=gymclasses)
+
+@members_blueprint.route("/edit/<id>/deactivate", methods=["POST"])
+def deactivate_member(id):
+    member=member_repo.select(id)
+    gymsession_repo.deactivate(id)
+    member_repo.update_deactivate(member)
+    print(member.active)
+    return redirect("/members")
+
+

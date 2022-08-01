@@ -9,7 +9,13 @@
 {%for member in members%}
 <table>
 
-    <td>{{member.name}} {{member.sex}}</td>
+    <td>{{member.name}} {{member.sex}} </td>
+    {% if member.active==True %}
+        <td>ACTIVE</td>
+    {%else%}
+        <td>INACTIVE</td>
+
+    {%endif%}
     
    
 </table>

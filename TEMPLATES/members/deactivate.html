@@ -1,0 +1,15 @@
+{%extends 'base.html'%} 
+{%block content%} 
+<h1>{{member.name}} is attending the following classes</h1>
+
+{% for gymclass in gymclasses %}
+<h3><div>{{gymclass.name}}</div></h3>
+
+{%endfor%}
+<form action="/edit/{{member.id}}/deactivate" method="POST">Do you want to remove this member from all classes attended?
+
+    <div><button type="submit">Deactivate member</button></div>
+</form>
+
+
+{%endblock%}

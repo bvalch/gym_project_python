@@ -2,8 +2,9 @@
 {%block content%}
 <h1>TEST</h1>
 {% for gymsession in gymsessions %}
+<h2><div>{{gymsession.gymclass.name}}</div></h2>
 <div>{{gymsession.member.name}}</div>
-<div>{{gymsession.gymclass.name}}</div>
+
  
 {%endfor%}
 {%endblock%}

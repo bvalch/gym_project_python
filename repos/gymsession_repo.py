@@ -12,10 +12,20 @@ def delete_all():
 
 def save(gymsession):
     for member in gymsession.member:
-        sql="INSERT INTO gymsessions(member_id,gymclass_id) VALUES (%s, %s) RETURNING id"
-        values=[member.id,gymsession.gymclass.id]
-        result=run_sql(sql,values)
+        if member.active:
+            sql="INSERT INTO gymsessions(member_id,gymclass_id) VALUES (%s, %s) RETURNING id"
+            values=[member.id,gymsession.gymclass.id]
+            result=run_sql(sql,values)
     gymsession.id=result[0]["id"]
+
+def select(id):
+    sql="SELECT gymclasses.* FROM gymclasses INNER JOIN gymsessions on gymsessions.gymclass_id=gymclasses.id WHERE gymsessions.member_id =%s"
+    values=[id]
+    results=run_sql(sql,values)
+    classes=[]
+    # for item in results:
+    #     classes.append(item['name'])
+    return results
 
 def select_all():
     sql="SELECT * FROM gymsessions"
@@ -28,8 +38,6 @@ def select_all():
         gymsessions.append(gymsession)
     return gymsessions
 
- 
-
 def show_attendees(class_id):
     attendees=[]
     sql="SELECT members.* FROM members INNER JOIN gymsessions ON gymsessions.member_id = members.id WHERE gymsessions.gymclass_id =%s"
@@ -40,7 +48,7 @@ def show_attendees(class_id):
     return attendees
 
 def get_capacity(class_id,members_list):
-    sql="SELECT members.* from members INNER JOIN gymsessions ON gymsessions.member_id =members.id WHERE gymsessions.gymclass_id = %s"
+    sql="SELECT members.* FROM members INNER JOIN gymsessions ON gymsessions.member_id =members.id WHERE gymsessions.gymclass_id = %s"
     values=(class_id)
     results=run_sql(sql,values)
     gymclass=gymclass_repo.select(class_id)
@@ -49,5 +57,11 @@ def get_capacity(class_id,members_list):
         return True
     else:
          return False
+
+def deactivate(id):
+    sql="DELETE FROM gymsessions WHERE member_id =%s"
+    values=[id]
+    run_sql(sql,values)
+    
 
    
