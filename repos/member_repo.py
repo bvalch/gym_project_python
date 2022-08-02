@@ -38,3 +38,8 @@ def update_deactivate(member):
     sql="UPDATE members SET active=NOT active  WHERE id = %s"
     values=[member.id]
     run_sql(sql,values)
+
+def update_activate(member):
+    sql="UPDATE members SET active=true where id=%s"
+    values=[member.id]
+    run_sql(sql,values)

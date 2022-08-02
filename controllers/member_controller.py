@@ -51,7 +51,19 @@ def deactivate_member(id):
     member=member_repo.select(id)
     gymsession_repo.deactivate(id)
     member_repo.update_deactivate(member)
-    print(member.active)
+    return redirect("/members")
+
+@members_blueprint.route("/edit/<id>/Activate")
+def show_member_to_activate(id):
+    member=member_repo.select(id)
+    return render_template("/members/activate.html",member=member)
+    
+
+@members_blueprint.route("/edit/<id>/activate",methods=["POST"])
+def activate_member(id):
+    member=member_repo.select(id)
+
+    member_repo.update_activate(member)
     return redirect("/members")
 
 

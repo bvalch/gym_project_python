@@ -1,9 +1,18 @@
 {%extends 'base.html'%}
 {%block content%}
 <h1>show.html</h1>
-{{member.name}} {{member.sex}} {{member.id}} {{member.active}}
+{{member.name}} {{member.sex}} 
+
+{%if member.active %} 
+<td>ACTIVE</td>
+{%else%} 
+<td>INACTIVE</td>
+{%endif%}
 
 <a href="/edit/{{member.id}}"><button>Edit</button></a>
-
+{%if member.active %} 
 <a href="/edit/{{member.id}}/Deactivate"><button>Deactivate</button></a>
+{%else%}
+<a href="/edit/{{member.id}}/Activate"><button>Activate</button></a>
+{%endif%}
 {%endblock%}
