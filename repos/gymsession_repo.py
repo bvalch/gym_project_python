@@ -18,14 +18,17 @@ def save(gymsession):
             result=run_sql(sql,values)
     gymsession.id=result[0]["id"]
 
-def select(id):
+def select(id_member):
     sql="SELECT gymclasses.* FROM gymclasses INNER JOIN gymsessions on gymsessions.gymclass_id=gymclasses.id WHERE gymsessions.member_id =%s"
-    values=[id]
+    values=[id_member]
     results=run_sql(sql,values)
-    classes=[]
-    # for item in results:
-    #     classes.append(item['name'])
     return results
+
+# def select_gymclass(id_gymclass): #new function
+#     sql="SELECT gymclasses.* FROM gymclasses INNER JOIN gymsessions on gymsessions.member_id=members.id WHERE gymsessions.gymclass_id = %s"
+#     values=[id_gymclass]
+#     results=run_sql(sql,values)
+#     return results
 
 def select_all():
     sql="SELECT * FROM gymsessions"

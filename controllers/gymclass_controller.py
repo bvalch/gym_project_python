@@ -51,8 +51,8 @@ def create():
 def add_template(id):
     gymclass=gymclass_repo.select(id)
     members=member_repo.select_all()
-
-    return render_template("gymclasses/add.html", gymclass=gymclass, members=members)
+    gymsession=gymsession_repo.show_attendees(id)
+    return render_template("gymclasses/add.html", gymclass=gymclass, members=members,gymsession=gymsession)
 
 @gymclasses_blueprint.route("/classes/<id>/add", methods=["POST"])
 def add_member(id):

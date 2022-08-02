@@ -6,10 +6,11 @@
 <div>Chose members to add</div>
 
 {%for member in members%}
-<div>
-<label for="select_member">{{member.name}}</label>
-<input type="checkbox" id="select_member" name="member_id" value="{{member.id}}">{{member.name}}<br>
-
+    {%if member.name not in gymsession %}
+    <div>
+    <label for="select_member">{{member.name}}</label>
+    <input type="checkbox" id="select_member" name="member_id" value="{{member.id}}">{{member.name}}<br>
+    {%endif%}
 
 </div>
 {%endfor%}
