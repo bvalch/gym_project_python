@@ -10,8 +10,12 @@
 {%for class in gymclasses%}
 <table>
 
-    <td>{{class.name}} {{class.capacity}}</td>
-    
+    <td>{{class.name}} {{class.capacity}} </td>
+    {%if class.gym_active==True %} 
+    <td>ACTIVE</td>
+    {%else%} 
+    <td>INACTIVE</td>
+    {%endif%}
    
 </table>
 <a href="classes/{{class.id}}"><button>Manage</button></a>

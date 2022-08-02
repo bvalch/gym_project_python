@@ -34,7 +34,6 @@ def update(gymclass):
     run_sql(sql,values)
 
 def deactivate_members(id):
-    sql="DELETE FROM gymsessions WHERE gymclasse_id=%s"
+    sql="DELETE FROM gymsessions WHERE gymclass_id=%s"
     values=[id]
-    result=run_sql(sql,values)
-    return result
+    run_sql(sql,values)

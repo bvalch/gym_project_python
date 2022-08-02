@@ -28,7 +28,9 @@ def edit_form(id):
     capacity=request.form["capacity"]
     gym_active=request.form["gym_active"]
     gymclass=GymClass(name,capacity,gym_active,id)
-    if gym_active==False:
+    gymclass_repo.update(gymclass)
+    gymclass=gymclass_repo.select(id)
+    if gymclass.gym_active==False:
         gymclass_repo.deactivate_members(id)
     
     gymclass_repo.update(gymclass)
