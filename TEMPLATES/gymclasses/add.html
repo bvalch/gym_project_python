@@ -8,7 +8,7 @@
 {%for member in members%}
     {%if member.name not in gymsession %}
     <div>
-    <label for="select_member">{{member.name}}</label>
+    <label for="select_member"></label>
     <input type="checkbox" id="select_member" name="member_id" value="{{member.id}}">{{member.name}}<br>
     {%endif%}
 

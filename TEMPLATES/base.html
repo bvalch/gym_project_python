@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/section.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <title>GYMNAME</title>
 </head>
 
 <body>
+    <header>
+        <h1>WELCOME TO THE GYM MANAGEMENT PAGE</h1>
+    </header>
     <main>
+
         <nav>
             <ul>
                 <a href="/">
@@ -24,16 +28,18 @@
                     <li>Classes</li>
                     <a href="/gymsessions">
                         <li>Class Sessions</li>
-                </a>
+                    </a>
 
             </ul>
         </nav>
-        <section id="content">
+        <section>
             {% block content%}
             {% endblock %}
         </section>
     </main>
-
+    <footer>
+        <h1>COPYRIGHT HOLKMANIA 1992</h1>
+    </footer>
 </body>
 
 </html>

@@ -1,25 +1,39 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1>index.html</h1>
-<a href="/members/new"><button>New Member</button></a>
-<table>
-<th>FULL NAME</th>
-<th>SEX</th>
+
+<h1>ONLY THE FINEST ATTEND OUR GYM</h1>
+<div id="new_member">
+    <a href="/members/new"><button id="manage_btn1">New Member</button></a>
+</div>
+
+
+<table id="member_table">
+    <tr>
+        <th id="name">FULL NAME</th>
+        <th id="btn">ACTION</th>
+        <th id="sex">SEX</th>
+        <th id="status">STATUS</th>
+    </tr>
 </table>
+
 {%for member in members%}
-<table>
-
-    <td>{{member.name}} {{member.sex}} </td>
-    {% if member.active==True %}
-        <td>ACTIVE</td>
-    {%else%}
-        <td>INACTIVE</td>
-
+<table id="member_table">
+    <tr>
+        <td id="name">{{member.name}}  </td>
+        <td><a href="members/display/{{member.id}}"><button
+            id="manage_btn">Manage</button></a></td>
+        <td id="sex">{{member.sex}}</td>
+        {% if member.active==True %}
+        <td id="status">ACTIVE</td>
+        {%else%}
+        <td id="status">INACTIVE</td>
+    </tr>
     {%endif%}
-    
-   
+
+
 </table>
-<a href="members/display/{{member.id}}"><button>Manage</button></a>
+
+
 
 {%endfor%}
 {%endblock%}

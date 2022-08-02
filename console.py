@@ -11,7 +11,7 @@ member_repo.delete_all()
 gymclass_repo.delete_all()
 
 
-member1=Member('Arnold','male')
+member1=Member('Shirtless Arnold','male')
 member_repo.save(member1)
 member2=Member('Rambo of Moria','male')
 member_repo.save(member2)
@@ -19,7 +19,7 @@ member3=Member('Sonya Blade','female')
 member_repo.save(member3)
 member4=Member('Ronnie Coleman','male')
 member_repo.save(member4)
-member5=Member('Condoleeza Rice','female')
+member5=Member('Condoleezza Rice','female')
 member_repo.save(member5)
 
 gymclass1=GymClass('Olympic baby lifting',4)
