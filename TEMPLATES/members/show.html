@@ -1,18 +1,24 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1>show.html</h1>
-{{member.name}} {{member.sex}} 
+<h1>{{member.name}}</h1>
 
-{%if member.active %} 
-<td>ACTIVE</td>
+ 
+
+{%if member.active %}
+<div id="member_btn1">
+<th>ACTIVE</th>
 {%else%} 
-<td>INACTIVE</td>
+<th>INACTIVE</th>
 {%endif%}
-
+<br>
 <a href="/edit/{{member.id}}"><button>Edit</button></a>
 {%if member.active %} 
 <a href="/edit/{{member.id}}/Deactivate"><button>Deactivate</button></a>
 {%else%}
 <a href="/edit/{{member.id}}/Activate"><button>Activate</button></a>
+</div>
+
+
+
 {%endif%}
 {%endblock%}

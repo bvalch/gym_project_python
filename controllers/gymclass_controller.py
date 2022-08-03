@@ -68,7 +68,7 @@ def add_member(id):
         gymsession_repo.save(gymsession)
         return redirect("/classes")
     else:
-        return 'error'
+        return 'TOO MANY MEMBERS IN THIS CLASS BROTHER'
 
 @gymclasses_blueprint.route("/gymsession/<id>/attending")
 def show_attending(id):

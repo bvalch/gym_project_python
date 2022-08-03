@@ -1,26 +1,25 @@
 body>header{
     text-align: center;
     height:100px;
-    background: rgb(89, 123, 89);
-    border: solid 5px rgb(1, 1, 5);
+    background: rgb(48, 77, 95);
+    border: solid 5px rgb(48, 77, 95);
     
 }
 body>footer{
 
     text-align: center;
     height:100px;
-    background: rgb(89, 123, 89);
-    border: solid 5px rgb(11, 11, 76);
+    background: rgb(48, 77, 95);
+    border: solid 5px rgb(48, 77, 95);
     
 
 }
 body>main{
-    background: beige;
+    background: rgb(78, 105, 111);
     height: 850px;
-   
-    padding: left solid green;
     padding:right 110px;
-    border:solid 20px rgb(18, 69, 63)
+    border:solid 10px rgb(48, 77, 95);
+    
     
 }
 body>main>nav>ul{
@@ -30,13 +29,24 @@ body>main>nav>ul{
     display:flex;
     justify-content: space-around;
     flex-direction: row;
+    border-bottom:solid white;
+    
 
 
 }
 body>main>section>h1{
     text-align: center;
 }
-#hulk{
+#hulk,img{
+    border-radius:5%;
+    display:flex;
+    justify-content: space-around;
+    margin-left:3%;
+    
+    max-width:90%;
+    height:auto;
+    width:auto;
+
     text-align: center;
 }
 
@@ -44,41 +54,7 @@ body>main>section>h1{
     text-align:center;
     font-size: 30px;
  }
-/* #member_table {
-    border-collapse: collapse;
-    margin: 35px 20px;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 800px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #1b0909;
-}
-#name td {
-    background-color: #009879;
-    color: #ffffff;
-    text-align:justify;
-    border-bottom: 1px solid #000000;
-}
-#member_table th{
-    color:rgb(255, 0, 0);
-    text-align:inherit;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #000000;
-}
 
-#status{
-    text-align: end;
-    border-collapse: collapse;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #000000;
-}
-#sex{
-    margin-left:20%;
-    text-align:center absolute;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #050505;
-} */ 
-/* */
 #member_table{
     width: 80%;
     margin: 20px 60px;
@@ -124,4 +100,45 @@ body>main>section>h1{
     width:150px;
     height:50px;
     position:center
+}
+
+#member_btn{
+    text-align: center;
+}
+#gender_select{
+    text-align:center;
+    margin-top: -25px;
+    margin-left:10px
+}
+#member_btn1{
+    text-align:center;
+}
+#member_btn_edit{
+    text-align:center
+}
+
+#submit_edit{
+    text-align:center;
+    margin-top:20px;
+}
+#gender{
+    width:100px;
+    margin-left:10px;
+    text-align:center
+}
+#member_btn2{
+    width:100px;
+}
+
+#reate_mmbr_form{
+    display:flex;
+    justify-content: space-between;
+}
+/* edit deactivate page */
+#member_deactivate_btn{
+    text-align:center;
+    margin-top:10px;
+}
+#deactivate_msg{
+    text-align:center
 }
